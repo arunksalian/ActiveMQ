@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 
+import com.mq.app.AppMain;
 import com.mq.app.bean.MessageBean;
 
 public class MessageBrocker {
@@ -14,6 +15,6 @@ public class MessageBrocker {
     private JmsTemplate jmsTemplate;
 	public void send (MessageBean message) {
 		LOGGER.info("sending with convertAndSend() to queue <" + message + ">");
-		jmsTemplate.convertAndSend(message);		
+		jmsTemplate.convertAndSend(AppMain.APP_QUEUE, message);		
 	}
 }
