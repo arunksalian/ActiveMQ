@@ -9,6 +9,7 @@ import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
 
 import com.mq.app.brocker.MessageBrocker;
+import com.mq.app.listner.AppListener;
 
 @Configuration
 public class AppConfig {
@@ -28,7 +29,12 @@ public class AppConfig {
         return converter;
     }
     
+    @Bean
     public MessageBrocker getMessageBrocker () {
     	return new MessageBrocker();
+    }
+    
+    public AppListener getAppListener () {
+    	return new AppListener();
     }
 }
