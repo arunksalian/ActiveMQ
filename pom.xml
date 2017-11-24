@@ -11,7 +11,12 @@
 		<version>1.5.7.RELEASE</version>
 	</parent>
 
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 	<dependencies>
+		<!-- ActiveMQ -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-activemq</artifactId>
@@ -24,10 +29,25 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
-		<!-- unrelated dependencies -->
+		<!-- MVC -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>			
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- Mongo -->
+		<dependency>
+			<groupId>de.flapdoodle.embed</groupId>
+			<artifactId>de.flapdoodle.embed.mongo</artifactId>
+			<version>1.50.5</version>
+		</dependency>
+		<dependency>
+			<groupId>cz.jirutka.spring</groupId>
+			<artifactId>embedmongo-spring</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 	</dependencies>
 
